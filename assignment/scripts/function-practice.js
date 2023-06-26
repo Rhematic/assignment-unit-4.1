@@ -54,17 +54,35 @@ bestNums = [3, 7, 8, 9];
 
 worstNums = [2, 4, 6, 1];
 
+emptyArray = [];
+
 function getLast(array) {
+  if (array.length === 0) {
+    return "undefined";
+  }
   return array.slice(-1);
 }
 
 console.log(getLast(bestNums));
 console.log(getLast(worstNums));
+console.log(getLast(emptyArray));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
-function find(value, array) {}
+
+function find(value, array) {
+  for (i = 0; i < array.length; i++) {
+    if (value === array[i]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(find(8, bestNums));
+console.log(find(1, worstNums));
+console.log(find(8, worstNums));
 
 // ----------------------
 // Stretch Goals
